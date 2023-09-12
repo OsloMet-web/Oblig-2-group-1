@@ -1,1 +1,84 @@
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
 
+/* Style for the header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style for the navigation buttons */
+#but1, #but2 {
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#but2 a {
+    color: white;
+}
+
+/* Style for the main content container */
+main {
+    max-width: 800px;
+    margin:  auto;
+    padding: 20px;
+}
+
+/* Style for the article preview container */
+.article {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+
+/* Style for the sub-title */
+.article h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Style for the journalist name and date */
+.article span {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Style for the image and photographer */
+.article figure {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.article img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style for the image caption */
+.article figcaption {
+    color: #777;
+    font-size: 12px;
+}
+
+/* Style for the paragraph preview */
+.article p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
