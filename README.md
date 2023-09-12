@@ -39,6 +39,6 @@
 </h2>
 <p>
     ❗ - Serves as implementation needed </br>
-    🗨️ - Serves as comment on implementation or vision
+    🗨️ - Serves as comment on implementation or vision </br>
     🛠️ - Fix issue and/or bug
 </p>
