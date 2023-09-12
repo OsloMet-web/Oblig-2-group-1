@@ -4,7 +4,7 @@
 <pre>
     <code class="has-line-data" data-line-start="2" data-line-end="10" class="language-sh">
     | index.html
-    | filesystem.txt <-- Will serve as a scuffed database for modems.
+    | filesystem.txt <-- Will serve as a scuffed database for modal 
     | - | media/
     | - | - | Images
     | - | pages/
