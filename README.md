@@ -40,4 +40,5 @@
 <p>
     ❗ - Serves as implementation needed </br>
     🗨️ - Serves as comment on implementation or vision
+    🛠️ - Fix issue and/or bug
 </p>
