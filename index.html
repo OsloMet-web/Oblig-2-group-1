@@ -22,10 +22,13 @@
         <main>
             <div>
                 <h1>Sample Article</h1>
-                <div>
+                <div class="grid"> 
+                    <!--❗ 
+                        Make each article inside of outer div into a pattern 
+                    -->
     
-                    <!-- Article content -->
-                    <div class="article" id="idforfilesystemforarticles">
+                    <!-- Articles Previews -->
+                    <div class="article" id="article-0">
                         <h4>Sample Article Title</h4>
                         <span>catman | September 12, 2023</span>
                         <div>
@@ -34,26 +37,49 @@
                                 <figcaption>catenjoyer by  Photographer</figcaption>  
                             </figure>
                         </div>
-                        <div>
-                            <h2>  dadakjdlakjdlkj </h2>
+
+                        <!--🗨️
+                            The purpose of having article previews is so that we can expand on them and get more information by clicking.
+
+                            For the sake of simplisity we wont create several .htmls for each article. But rather make it dynamically show the content.
+                        -->
+                        <div class="content-inside-article"> 
+                            <!--❗
+                                By default this should be invisible. Due to =>
+
+                                Make either into Modem or seperate into it's own .html page. 
+                                Keeping a Modem would simplify our process.
+                            -->
+                            <h2>  History of Mr Cat </h2>
     
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra, tortor at cursus eleifend, nunc lacus aliquam augue, ac rhoncus libero justo in nibh. Aliquam erat volutpat. Proin consequat ultricies ipsum eget cursus. Quisque quis tincidunt risus. Etiam in tellus a eros efficitur vehicula eu ac nisi. Vestibulum fermentum vulputate eros ac laoreet. Nulla justo ex, sodales id augue feugiat, bibendum fermentum eros. Sed consequat semper libero, vel rhoncus ex auctor vel. Aliquam eget lectus vel erat euismod congue. Suspendisse tortor ligula, consectetur ut ante non, ultricies dignissim arcu. Donec sit amet mauris pharetra, consequat dolor sit amet, accumsan est. Praesent id tellus in arcu vulputate gravida. Nulla mi dolor, lacinia vel porttitor sed, volutpat id nisi.</p>
+                            <p>
+                                <p>
+                                    Mr. Cat is no ordinary feline; he's a legendary figure in the world of cats, known far and wide for his unique personality and incredible talents. With striking emerald-green eyes that seem to hold the wisdom of the ages, Mr. Cat is a distinguished Siamese breed, his sleek, cream-colored fur adorned with a distinctive chocolate-brown mask. His origin story is shrouded in mystery, with tales whispered among cats about his birth under a rare lunar eclipse, a celestial event believed to have bestowed him with special powers.
+                                </p>
+                                <p>
+                                    What truly sets Mr. Cat apart from other cats is his insatiable curiosity and an uncanny ability to communicate with other animals through a secret, ancient language known only to a select few. His days are often spent embarking on grand adventures, exploring the hidden nooks and crannies of the world, and solving mysteries that no other cat could fathom. His reputation as a protector of his feline friends is well-deserved, and his purr has been said to have the power to heal even the deepest wounds. Mr. Cat's enigmatic presence has left a lasting mark on the animal kingdom, making him a beloved and revered figure among both cats and humans alike.
+                                </p>
+                            </p>
                             <figure>
                                 <img src="media/Cat-1.jpg" alt="Image 1">
                                 <figcaption>catenjoyer by  Photographer</figcaption>  
                             </figure>
-                            <p>Vivamus iaculis est tellus, id molestie nunc luctus at. Quisque elementum magna ut vestibulum dictum. Curabitur finibus, arcu et tempus molestie, diam ipsum interdum sem, elementum mattis eros turpis vel lorem. Curabitur at hendrerit tellus. Sed congue eleifend sodales. Proin bibendum vulputate lacinia. Pellentesque a congue risus. Nulla ac blandit dolor. Suspendisse potenti. Vestibulum ultrices nulla accumsan, interdum felis in, imperdiet ligula. Sed efficitur ante et sagittis tincidunt. Donec vel ullamcorper velit. Vivamus viverra magna in nulla euismod euismod. Aliquam condimentum venenatis hendrerit. Nunc id sagittis libero, eu molestie est. Mauris aliquet ornare consectetur.</p>
+                            <p>
+                                Mr. Cat's formidable claws, concealed beneath his elegant veneer, are a testament to the untamed spirit that lies within. Gleaming like polished ivory, these retractable weapons are not to be underestimated. When provoked or engaged in playful bouts, they emerge with a deadly precision, each curved talon a marvel of nature's engineering. With lightning-quick reflexes, Mr. Cat wields his claws like a seasoned warrior, striking fear into the hearts of toy mice and feathered adversaries alike.                            
+                            </p>
                             
-                            <h2>Sub-heading 2</h2>
+                            <h2>Miss Cat sleeping</h2>
                             <figure>
                                 <img src="media/cat_orange.jpg" alt="Image 2">
                                 <figcaption>catenjoyer by  Photographer</figcaption>  
                             </figure>
      
                             
-                            <p>Nullam eget turpis non justo ornare accumsan. Etiam cursus urna at magna dictum, quis mattis tortor mattis. Nulla arcu felis, mattis at feugiat eget, consectetur eu nibh. Mauris bibendum blandit arcu, sit amet malesuada nunc pellentesque quis. Nulla a purus libero.
-                                Quisque euismod viverra quam, vitae rutrum ipsum. Nullam eget turpis non justo ornare accumsan. Etiam cursus urna at magna dictum, quis mattis tortor mattis. Nulla arcu felis, mattis at feugiat eget, consectetur eu nibh. Mauris bibendum blandit arcu, sit amet malesuada nunc pellentesque quis. Nulla a purus libero.</p>
-                        </div>                        
+                            <p>
+                                As the sun dips below the horizon, Miss Cat gracefully retires to his favorite resting place, a plush, velvet-lined cushion nestled by a sunlit window. With a languid stretch and a gentle yawn that reveals her impressive set of ivory-white teeth, she settles into the cushion's embrace. Her eyes, once vibrant with curiosity, now gently close, their emerald glow fading into a peaceful darkness. Miss Cat's rhythmic breathing becomes a soothing melody, synchronized with the world's heartbeat, as she succumbs to the realm of dreams. Her body, once a canvas of boundless energy, relaxes into a state of serene tranquility, each soft exhale a testament to the contentment of a life well-lived. As she slumbers, the world outside continues its bustling pace, unaware of the regal creature in repose, a moment of quietude in the midst of life's ceaseless symphony.
+                            </p>
+                        </div> 
+
                     </div>
     
                 </div>
