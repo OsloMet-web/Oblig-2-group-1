@@ -1,2 +1,4 @@
 Index | article id | article content | article media
 0 | article-0 | example: bla bla bla | ["media/cat_orange.jpg","media/cat_tabby.jpg","media/cat-1.jpg"]
+
+-->❗ Create more texts for .txt file. If want to, can create a small script for it
