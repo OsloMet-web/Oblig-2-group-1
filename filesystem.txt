@@ -1,0 +1,2 @@
+Index | article id | article content | article media
+0 | article-0 | example: bla bla bla | ["media/cat_orange.jpg","media/cat_tabby.jpg","media/cat-1.jpg"]
