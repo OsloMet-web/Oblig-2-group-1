@@ -16,7 +16,7 @@ header {
 #but1, #but2 {
     display: inline-block;
     margin: 10px;
-    font-style: bold;
+    font-weight: bold;
     cursor: pointer;
 }
 
