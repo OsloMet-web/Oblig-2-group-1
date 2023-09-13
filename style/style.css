@@ -32,7 +32,6 @@ main {
     padding: 20px;
 }
 
-/* Style for the article preview container */
 .article {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -41,9 +40,8 @@ main {
     margin: 10px 0;
     cursor: pointer;
     transition: transform 0.2s;
+    max-width: 100%; 
 }
-
-
 
 /* Style for the sub-title */
 .article h4 {
@@ -85,6 +83,32 @@ main {
 }
 
 
+
+/* Style for the list items within the article */
+.article ul li {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem; 
+    margin: 8px 0;
+    max-width: 100%; 
+    word-wrap: break-word; /* Allow long words to break to the next line */
+    white-space: normal; 
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .article ul li {
+        font-size: 0.9rem; /* Decrease font size for smaller screens */
+    }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 480px) {
+    .article ul li {
+        font-size: 0.8rem; /* Further decrease font size for very small screens */
+    }
+}
+
+
 footer {
     background-color: #333;
     color: #fff;
@@ -92,3 +116,5 @@ footer {
     text-align: center;
     font-size: 14px; 
     }
+
+
