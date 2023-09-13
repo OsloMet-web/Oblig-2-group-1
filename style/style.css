@@ -1,13 +1,13 @@
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman';
 }
 
 /* Style for the header */
 header {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 10px;
     text-align: center;
 }
@@ -16,13 +16,12 @@ header {
 #but1, #but2 {
     display: inline-block;
     margin: 10px;
-    font-weight: bold;
-    font-size: 18px;
+    font-style: bold;
     cursor: pointer;
 }
 
 #but2 a {
-    color: white;
+    color: #fff;
 }
 
 /* Style for the main content container */
@@ -45,7 +44,6 @@ main {
 
 /* Style for the sub-title */
 .article h4 {
-    font-size: 24px;
     margin-bottom: 10px;
     color: #333;
 }
@@ -77,7 +75,6 @@ main {
 
 /* Style for the paragraph preview */
 .article p {
-    font-size: 16px;
     line-height: 1.5;
     margin-top: 10px;
 }
@@ -87,34 +84,19 @@ main {
 /* Style for the list items within the article */
 .article ul li {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1rem; 
     margin: 8px 0;
     max-width: 100%; 
     word-wrap: break-word; /* Allow long words to break to the next line */
     white-space: normal; 
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .article ul li {
-        font-size: 0.9rem; /* Decrease font size for smaller screens */
-    }
-}
-
-/* Media query for even smaller screens */
-@media (max-width: 480px) {
-    .article ul li {
-        font-size: 0.8rem; /* Further decrease font size for very small screens */
-    }
-}
-
+/* Style for the footer on the second page */
 
 footer {
     background-color: #333;
     color: #fff;
     padding: 10px;
     text-align: center;
-    font-size: 14px; 
     }
 
 
