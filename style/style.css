@@ -83,3 +83,12 @@ main {
     line-height: 1.5;
     margin-top: 10px;
 }
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px; 
+    }
