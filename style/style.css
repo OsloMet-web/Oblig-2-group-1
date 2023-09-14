@@ -24,6 +24,11 @@ header {
     color: #fff;
 }
 
+.current {
+    pointer-events: none;
+}
+
+
 /* Style for the main content container */
 main {
     max-width: 800px;
