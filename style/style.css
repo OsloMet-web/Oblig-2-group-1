@@ -31,9 +31,10 @@ header {
 
 /* Style for the main content container */
 main {
-    max-width: 800px;
+    max-width: 60.9vw;
     margin:  auto;
     padding: 20px;
+    text-align: center;
 }
 
 .article {
@@ -45,6 +46,8 @@ main {
     cursor: pointer;
     transition: transform 0.2s;
     max-width: 100%; 
+    grid-column: span 1;
+
 }
 
 /* Style for the sub-title */
@@ -105,3 +108,20 @@ footer {
     }
 
 
+.grid {
+    display: grid;
+    grid-template-columns: 20.3vw 20.3vw 20.3vw;
+    grid-template-rows: 41.15vh 41.15vh 41.15vh 41.15vh;
+   
+
+}
+
+.span2 {
+    grid-column: 2 / span 2;
+
+
+}
+.content-inside-article{
+    display: none;
+
+}
