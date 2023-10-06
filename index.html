@@ -25,35 +25,30 @@
             <div>
                 <h1>Sample Article</h1>
                 <div class="grid" id="output"> 
-                    <!--❗ 
-                        Make each article inside of outer div into a pattern 
-                    -->
     
                     <!-- Articles Previews -->
-                    <div class="article" id="article-0">
-                        <h4>Sample Article Title</h4>
-                        <span>catman | September 12, 2023</span>
-                        <div>
-                            <figure>
-                                <img src="media/cat_tabby.jpg" alt="Cat">
-                                <figcaption>catenjoyer by  Photographer</figcaption>  
-                            </figure>
+                    <div  class="article" id="article-0">
+                        <div data-open-modal>
+                            <h4>History of Mr Cat</h4>
+                            <span>catman | September 12, 2023</span>
+                            <div>
+                                <figure>
+                                    <img src="media/cat_tabby.jpg" alt="Cat">
+                                    <figcaption>catenjoyer by  Photographer</figcaption>  
+                                </figure>
+                            </div>
                         </div>
 
-                        <!--🗨️
-                            The purpose of having article previews is so that we can expand on them and get more information by clicking.
-
-                            For the sake of simplisity we wont create several .htmls for each article. But rather make it dynamically show the content.
-                        -->
-                        <div class="content-inside-article"> 
-                            <!--❗
-                                By default this should be invisible. Due to =>
-
-                                Make either into modal or seperate into it's own .html page. 
-                                Keeping a modal would simplify our process.
-                            -->
-                            <h2>  History of Mr Cat </h2>
-    
+                    
+                        <!-- Article itself with modals-->
+                        <dialog data-modal> 
+                            <span class="article-header-inside">
+                                <h2>History of Mr Cat</h2>
+                                <button data-close-modal>X</button>
+                            </span>
+                                
+                           
+                            
                             <p>
                                 <p>
                                     Mr. Cat is no ordinary feline; he's a legendary figure in the world of cats, known far and wide for his unique personality and incredible talents. With striking emerald-green eyes that seem to hold the wisdom of the ages, Mr. Cat is a distinguished Siamese breed, his sleek, cream-colored fur adorned with a distinctive chocolate-brown mask. His origin story is shrouded in mystery, with tales whispered among cats about his birth under a rare lunar eclipse, a celestial event believed to have bestowed him with special powers.
@@ -80,9 +75,10 @@
                             <p>
                                 As the sun dips below the horizon, Miss Cat gracefully retires to her favorite resting place, a plush, velvet-lined cushion nestled by a sunlit window. With a languid stretch and a gentle yawn that reveals her impressive set of ivory-white teeth, she settles into the cushion's embrace. Her eyes, once vibrant with curiosity, now gently close, their emerald glow fading into a peaceful darkness. Miss Cat's rhythmic breathing becomes a soothing melody, synchronized with the world's heartbeat, as she succumbs to the realm of dreams. Her body, once a canvas of boundless energy, relaxes into a state of serene tranquility, each soft exhale a testament to the contentment of a life well-lived. As she slumbers, the world outside continues its bustling pace, unaware of the regal creature in repose, a moment of quietude in the midst of life's ceaseless symphony.
                             </p>
-                        </div> 
-
+                        </dialog> 
                     </div>
+
+                    
                     <div class="article span2" id="article-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptate nostrum sit facilis reiciendis et. Ea aspernatur dignissimos animi quidem, at officia, earum voluptatem perspiciatis voluptates fugiat itaque quam nihil! </div>
                     <div class="article" id="article-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi laboriosam odio sapiente. Blanditiis mollitia ex laborum iure ab odit iste est consequuntur, nulla vero autem, labore fuga non amet? Exercitationem. </div>
                     <div class="article" id="article-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis nihil dolores sint, quo amet deserunt quidem possimus officia dignissimos saepe dolorem corporis doloremque non consectetur sed provident, ipsam unde fuga! </div>

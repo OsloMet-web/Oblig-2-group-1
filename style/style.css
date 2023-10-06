@@ -43,11 +43,13 @@ main {
     border-radius: 5px;
     padding: 20px;
     margin: 10px 0;
-    cursor: pointer;
     transition: transform 0.2s;
     max-width: 100%; 
     grid-column: span 1;
 
+}
+div[data-open-modal]{
+    cursor: pointer;
 }
 
 /* Style for the sub-title */
@@ -121,7 +123,64 @@ footer {
 
 
 }
-.content-inside-article{
-    display: none;
 
+/* Modal styling */
+dialog::backdrop{ /* Background of modal */
+    background-color: hsla(270, 2%, 19%, 0.5);
+}
+
+/* Modal custom scroll*/
+dialog::-webkit-scrollbar {
+    width: 10px;
+}
+dialog::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+dialog::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+dialog::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+dialog {
+    width: 50%;
+    height: 50%;
+    border: none;
+    cursor: default;
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* Button/header in modal styling*/
+button[data-close-modal] {
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: color 0.3s, transform 0.3s;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+button[data-close-modal]:hover {
+    color: red;
+    transform: rotate(180deg);
+}
+.article-header-inside {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
 }
