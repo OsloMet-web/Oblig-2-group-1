@@ -55,7 +55,6 @@ addModalAbility() //Run function pre load of other articles
 
 // Populate with data at index x
 function populateTemplateAtIndex(index, clonnedarticle) {
-  console.log(`-- RUNNING populateTemplateAtIndex(${index},${clonnedarticle}) --`)
   // If Index is 2nd and every 11th index therafter then add class span2 => 2, 13 , 24, etc
   if ((index === 1) || ((index - 1) % 11 === 0 && index !== 0)) {
     let outerDiv = clonnedarticle.children[0]
