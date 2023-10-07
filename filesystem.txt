@@ -12,6 +12,5 @@ Index | data-modal-title | data-modal-author-date | data-modal-img | data-modal-
 22 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
 23 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
 24 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
-asda
 
-asdadasd | asda
+This is for populating the articals.

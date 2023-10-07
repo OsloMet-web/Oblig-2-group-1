@@ -84,7 +84,7 @@ fetch("/Oblig-2-group-1/filesystem.txt")
 function populateTemplateAtIndex(index, clonnedarticle) {
   // If Index is 2nd and every 11th index therafter then add class span2 => 2, 13 , 24, etc
   if ((index === 1) || ((index - 1) % 11 === 0 && index !== 0)) {
-    const outerDiv = clonnedarticle.querySelector("div")
+    let outerDiv = clonnedarticle.querySelector(".article")
     console.log(outerDiv)
     outerDiv.classList.add("span2")  
   }
