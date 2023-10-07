@@ -69,8 +69,6 @@ function cloneTemplate(index) {
   console.log(`-- FINISHED cloneTemplate --`)
 }
 
-
-
 // Get data from .txt | fetch only works on github | Async so order is correct and data is loaded
 const articlesData = []
 
@@ -110,7 +108,7 @@ async function fetchData() {
 document.addEventListener("DOMContentLoaded", function() {
   fetchData().then(() => {
     // For each item in articlesData clone template and populate at that index 
-    for (let i = 1; i < articlesData.length; i++) {
+    for (let i = 0; i < articlesData.length; i++) {
       cloneTemplate(i)
     }
   })
