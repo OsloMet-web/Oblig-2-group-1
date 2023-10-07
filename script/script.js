@@ -39,6 +39,8 @@ function cloneTemplate() {
   // Append to the "output" id
   const outputElement = document.getElementById("output")
   outputElement.appendChild(clone)
+
+  return clone
 }
 
 
@@ -69,10 +71,9 @@ fetch("/Oblig-2-group-1/filesystem.txt")
         // For each item in articlesData clone template and populate at that index 
         for (let i = 1; i < articlesData.length; i++) {
           console.log(i)
-          cloneTemplate()
-          let article = document.querySelectorAll(".article")[i]
-          console.log(article)
-          populateTemplateAtIndex(i,article)
+          let clonnedarticle = cloneTemplate()
+          console.log(clonnedarticle)
+          populateTemplateAtIndex(i,clonnedarticle)
         }
     })
     .catch(error => {
@@ -80,20 +81,20 @@ fetch("/Oblig-2-group-1/filesystem.txt")
     })
 
 // Populate with data at index x
-function populateTemplateAtIndex(index, article) {
+function populateTemplateAtIndex(index, clonnedarticle) {
   // If Index is 2nd and every 11th index therafter then add class span2 => 2, 13 , 24, etc
   if ((index === 1) || ((index - 1) % 11 === 0 && index !== 0)) {
-    article.classList.add("span2")  
+    clonnedarticle.classList.add("span2")  
   }
 
   // Add information into the data attributes
-  if (article && articlesData[index]) {
+  if (clonnedarticle && articlesData[index]) {
       let data = articlesData[index]
-      article.querySelector("[data-modal-title]").innerHTML = data["data-modal-title"]
-      article.querySelector("[data-modal-author-date]").innerHTML = data["data-modal-author-date"]
-      article.querySelector("[data-modal-img]").src = data["data-modal-img"]
-      article.querySelector("[data-modal-img-caption]").innerHTML = data["data-modal-img-caption"]
-      article.querySelector("[data-modal-content]").innerHTML = data["data-modal-content"]
+      clonnedarticle.querySelector("[data-modal-title]").innerHTML = data["data-modal-title"]
+      clonnedarticle.querySelector("[data-modal-author-date]").innerHTML = data["data-modal-author-date"]
+      clonnedarticle.querySelector("[data-modal-img]").src = data["data-modal-img"]
+      clonnedarticle.querySelector("[data-modal-img-caption]").innerHTML = data["data-modal-img-caption"]
+      clonnedarticle.querySelector("[data-modal-content]").innerHTML = data["data-modal-content"]
   }
 }
 
