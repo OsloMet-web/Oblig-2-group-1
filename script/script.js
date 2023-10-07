@@ -47,20 +47,23 @@ const articlesData = []
 fetch("/Oblig-2-group-1/filesystem.txt")
     .then(response => response.text())
     .then(data => {
-        let lines = data.split("\n")
-        let headers = lines[0].split(" | ")
+        let lines = data.trim().split("\n")
+        let headers = lines[0].trim().split(/\s*\|\s*/) // Splits header by "|" and trims any spaces
 
         for (let i = 1; i < lines.length; i++) {
-            let values = lines[i].split(" | ")
+            let values = lines[i].trim().split(/\s*\|\s*/) // Splits by "|" and trims any spaces
             let articleData = {}
 
-            for (let j = 0; j < headers.length; j++) {
-                articleData[headers[j]] = values[j].replace(/(^"|"$)/g, "")  // Remove quotes
+            // If the current line does not have the expected number of values, skip it
+            if (values.length !== headers.length) {
+              continue
             }
-
-            articlesData.push(articleData)
-
-            console.log(articleData)
+            for (let j = 0; j < headers.length; j++) {
+                let cleanValue = values[j].replace(/(^"|"$)/g, "") // Remove quotes
+                articleData[headers[j]] = cleanValue
+            }
+            
+            articlesData.push(articleData);
         }
         // For each item in articlesData clone template and populate at that index 
         for (let i = 1; i < articlesData.length; i++) {
