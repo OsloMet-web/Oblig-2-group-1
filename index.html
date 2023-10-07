@@ -27,7 +27,7 @@
                 <div class="grid" id="output"> 
     
                     <!-- Articles Previews -->
-                    <div  class="article" id="article-0">
+                    <div  class="article">
                         <div data-open-modal>
                             <h4>History of Mr Cat</h4>
                             <span>catman | September 12, 2023</span>
@@ -46,38 +46,65 @@
                                 <h2>History of Mr Cat</h2>
                                 <button data-close-modal>X</button>
                             </span>
+                            
+                            <!-- Content inside modal -->
+                            <div> 
+                                <p>
+                                    <p>
+                                        Mr. Cat is no ordinary feline; he's a legendary figure in the world of cats, known far and wide for his unique personality and incredible talents. With striking emerald-green eyes that seem to hold the wisdom of the ages, Mr. Cat is a distinguished Siamese breed, his sleek, cream-colored fur adorned with a distinctive chocolate-brown mask. His origin story is shrouded in mystery, with tales whispered among cats about his birth under a rare lunar eclipse, a celestial event believed to have bestowed him with special powers.
+                                    </p>
+                                    <p>
+                                        What truly sets Mr. Cat apart from other cats is his insatiable curiosity and an uncanny ability to communicate with other animals through a secret, ancient language known only to a select few. His days are often spent embarking on grand adventures, exploring the hidden nooks and crannies of the world, and solving mysteries that no other cat could fathom. His reputation as a protector of his feline friends is well-deserved, and his purr has been said to have the power to heal even the deepest wounds. Mr. Cat's enigmatic presence has left a lasting mark on the animal kingdom, making him a beloved and revered figure among both cats and humans alike.
+                                    </p>
+                                </p>
+                                <figure>
+                                    <img src="media/Cat-1.jpg" alt="Image 1">
+                                    <figcaption>catenjoyer by  Photographer</figcaption>  
+                                </figure>
+                                <p>
+                                    Mr. Cat's formidable claws, concealed beneath his elegant veneer, are a testament to the untamed spirit that lies within. Gleaming like polished ivory, these retractable weapons are not to be underestimated. When provoked or engaged in playful bouts, they emerge with a deadly precision, each curved talon a marvel of nature's engineering. With lightning-quick reflexes, Mr. Cat wields his claws like a seasoned warrior, striking fear into the hearts of toy mice and feathered adversaries alike.                            
+                                </p>
                                 
-                           
-                            
-                            <p>
+                                <h2>Miss Cat sleeping</h2>
+                                <figure>
+                                    <img src="media/cat_orange.jpg" alt="Image 2">
+                                    <figcaption>catenjoyer by  Photographer</figcaption>  
+                                </figure>
+         
+                                
                                 <p>
-                                    Mr. Cat is no ordinary feline; he's a legendary figure in the world of cats, known far and wide for his unique personality and incredible talents. With striking emerald-green eyes that seem to hold the wisdom of the ages, Mr. Cat is a distinguished Siamese breed, his sleek, cream-colored fur adorned with a distinctive chocolate-brown mask. His origin story is shrouded in mystery, with tales whispered among cats about his birth under a rare lunar eclipse, a celestial event believed to have bestowed him with special powers.
+                                    As the sun dips below the horizon, Miss Cat gracefully retires to her favorite resting place, a plush, velvet-lined cushion nestled by a sunlit window. With a languid stretch and a gentle yawn that reveals her impressive set of ivory-white teeth, she settles into the cushion's embrace. Her eyes, once vibrant with curiosity, now gently close, their emerald glow fading into a peaceful darkness. Miss Cat's rhythmic breathing becomes a soothing melody, synchronized with the world's heartbeat, as she succumbs to the realm of dreams. Her body, once a canvas of boundless energy, relaxes into a state of serene tranquility, each soft exhale a testament to the contentment of a life well-lived. As she slumbers, the world outside continues its bustling pace, unaware of the regal creature in repose, a moment of quietude in the midst of life's ceaseless symphony.
                                 </p>
-                                <p>
-                                    What truly sets Mr. Cat apart from other cats is his insatiable curiosity and an uncanny ability to communicate with other animals through a secret, ancient language known only to a select few. His days are often spent embarking on grand adventures, exploring the hidden nooks and crannies of the world, and solving mysteries that no other cat could fathom. His reputation as a protector of his feline friends is well-deserved, and his purr has been said to have the power to heal even the deepest wounds. Mr. Cat's enigmatic presence has left a lasting mark on the animal kingdom, making him a beloved and revered figure among both cats and humans alike.
-                                </p>
-                            </p>
-                            <figure>
-                                <img src="media/Cat-1.jpg" alt="Image 1">
-                                <figcaption>catenjoyer by  Photographer</figcaption>  
-                            </figure>
-                            <p>
-                                Mr. Cat's formidable claws, concealed beneath his elegant veneer, are a testament to the untamed spirit that lies within. Gleaming like polished ivory, these retractable weapons are not to be underestimated. When provoked or engaged in playful bouts, they emerge with a deadly precision, each curved talon a marvel of nature's engineering. With lightning-quick reflexes, Mr. Cat wields his claws like a seasoned warrior, striking fear into the hearts of toy mice and feathered adversaries alike.                            
-                            </p>
-                            
-                            <h2>Miss Cat sleeping</h2>
-                            <figure>
-                                <img src="media/cat_orange.jpg" alt="Image 2">
-                                <figcaption>catenjoyer by  Photographer</figcaption>  
-                            </figure>
-     
-                            
-                            <p>
-                                As the sun dips below the horizon, Miss Cat gracefully retires to her favorite resting place, a plush, velvet-lined cushion nestled by a sunlit window. With a languid stretch and a gentle yawn that reveals her impressive set of ivory-white teeth, she settles into the cushion's embrace. Her eyes, once vibrant with curiosity, now gently close, their emerald glow fading into a peaceful darkness. Miss Cat's rhythmic breathing becomes a soothing melody, synchronized with the world's heartbeat, as she succumbs to the realm of dreams. Her body, once a canvas of boundless energy, relaxes into a state of serene tranquility, each soft exhale a testament to the contentment of a life well-lived. As she slumbers, the world outside continues its bustling pace, unaware of the regal creature in repose, a moment of quietude in the midst of life's ceaseless symphony.
-                            </p>
+                            </div>
                         </dialog> 
                     </div>
+                    <!-- Article template of the above -->
+                    <template id="article-template">
+                        <div class="article">
+                            <div data-open-modal>
+                                <h4 data-modal-title></h4> <!-- Title -->
+                                <span data-modal-author-date></span> <!-- Author and Date -->
+                                <div>
+                                    <figure>
+                                        <img data-modal-img src="" alt=""> <!-- Image -->
+                                        <figcaption data-modal-img-caption></figcaption> <!-- Caption -->
+                                    </figure>
+                                </div>
+                            </div>
+                    
+                            <dialog data-modal>
+                                <span class="article-header-inside">
+                                    <h2 data-modal-title></h2> <!-- Title inside modal -->
+                                    <button data-close-modal>X</button>
+                                </span>
+                                
+                                <!-- Content inside modal -->
+                                <div data-modal-content>
 
+                                </div>
+                            </dialog>
+                        </div>
+                    </template>
                     
                     <div class="article span2" id="article-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptate nostrum sit facilis reiciendis et. Ea aspernatur dignissimos animi quidem, at officia, earum voluptatem perspiciatis voluptates fugiat itaque quam nihil! </div>
                     <div class="article" id="article-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi laboriosam odio sapiente. Blanditiis mollitia ex laborum iure ab odit iste est consequuntur, nulla vero autem, labore fuga non amet? Exercitationem. </div>

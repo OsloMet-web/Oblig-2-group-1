@@ -1,4 +1,20 @@
-Index | article id | article content | article media
-0 | article-0 | "<div>example: bla bla bla</div>" | ["media/cat_orange.jpg","media/cat_tabby.jpg","media/cat-1.jpg"]
+Index | data-modal-title | data-modal-author-date | data-modal-img | data-modal-img-caption | data-modal-content 
+12 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+13 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+14 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+15 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+16 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+17 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+18 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+19 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+20 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+21 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+22 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+23 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
+24 | "Joe" | "Shark dudududu - October 07, 2023" | "media/cat_orange.jpg" | "By dudududu" | "The killer of the fish"
 
--->❗ Create more texts for .txt file. If want to, can create a small script for it
+
+
+
+
+
