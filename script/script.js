@@ -83,10 +83,10 @@ function populateTemplateAtIndex(index) {
   // Add information into the data attributes
   if (article && articlesData[index]) {
       let data = articlesData[index]
-      article.querySelector("[data-modal-title]").textContent = data["data-modal-title"]
-      article.querySelector("[data-modal-author-date]").textContent = data["data-modal-author-date"]
+      article.querySelector("[data-modal-title]").innerHTML = data["data-modal-title"]
+      article.querySelector("[data-modal-author-date]").innerHTML = data["data-modal-author-date"]
       article.querySelector("[data-modal-img]").src = data["data-modal-img"]
-      article.querySelector("[data-modal-img-caption]").textContent = data["data-modal-img-caption"]
-      article.querySelector("[data-modal-content]").textContent = data["data-modal-content"]
+      article.querySelector("[data-modal-img-caption]").innerHTML = data["data-modal-img-caption"]
+      article.querySelector("[data-modal-content]").innerHTML = data["data-modal-content"]
   }
 }
