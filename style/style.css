@@ -70,13 +70,6 @@ div[data-open-modal]{
     margin: 10px 0;
 }
 
-.article img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
 /* Style for the image caption */
 .article figcaption {
     color: #777;
@@ -101,7 +94,6 @@ div[data-open-modal]{
 }
 
 /* Style for the footer on the second page */
-
 footer {
     background-color: #333;
     color: #fff;
@@ -109,19 +101,22 @@ footer {
     text-align: center;
     }
 
-
+/* Grid system */
 .grid {
     display: grid;
     grid-template-columns: 20.3vw 20.3vw 20.3vw;
     grid-template-rows: 41.15vh 41.15vh 41.15vh 41.15vh;
 }
 
-.span2 {
+/* Grid spans 2 cells*/
+.span2 { 
     grid-column: 2 / span 2;
 }
-.span2 img {
+
+/* Preview img Styling*/
+figure img {
     max-width: 100%;
-    height: auto;
+    height: 22vh;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
@@ -146,6 +141,7 @@ dialog::-webkit-scrollbar-thumb {
 dialog::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+/* Modal styling*/
 dialog {
     width: 50%;
     height: 50%;
