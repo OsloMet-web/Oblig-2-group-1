@@ -43,43 +43,6 @@ function cloneTemplate() {
   return clone
 }
 
-
-// Get data from .txt | fetch only works on github
-const articlesData = []
-fetch("/Oblig-2-group-1/filesystem.txt")
-    .then(response => response.text())
-    .then(data => {
-        let lines = data.trim().split("\n")
-        let headers = lines[0].trim().split(/\s*\|\s*/) // Splits header by "|" and trims any spaces
-
-        for (let i = 1; i < lines.length; i++) {
-            let values = lines[i].trim().split(/\s*\|\s*/) // Splits by "|" and trims any spaces
-            let articleData = {}
-
-            // If the current line does not have the expected number of values, skip it
-            if (values.length !== headers.length) {
-              continue
-            }
-            for (let j = 0; j < headers.length; j++) {
-                let cleanValue = values[j].replace(/(^"|"$)/g, "") // Remove quotes
-                articleData[headers[j]] = cleanValue
-            }
-
-            articlesData.push(articleData);
-            console.log(articleData)
-        }
-        // For each item in articlesData clone template and populate at that index 
-        for (let i = 1; i < articlesData.length; i++) {
-          console.log(i)
-          let clonnedarticle = cloneTemplate()
-          console.log(clonnedarticle)
-          populateTemplateAtIndex(i,clonnedarticle)
-        }
-    })
-    .catch(error => {
-        console.log("Error:", error)
-    })
-
 // Populate with data at index x
 function populateTemplateAtIndex(index, clonnedarticle) {
   // If Index is 2nd and every 11th index therafter then add class span2 => 2, 13 , 24, etc
@@ -91,12 +54,61 @@ function populateTemplateAtIndex(index, clonnedarticle) {
 
   // Add information into the data attributes
   if (clonnedarticle && articlesData[index]) {
-      let data = articlesData[index]
-      clonnedarticle.querySelector("[data-modal-title]").innerHTML = data["data-modal-title"]
-      clonnedarticle.querySelector("[data-modal-author-date]").innerHTML = data["data-modal-author-date"]
-      clonnedarticle.querySelector("[data-modal-img]").src = data["data-modal-img"]
-      clonnedarticle.querySelector("[data-modal-img-caption]").innerHTML = data["data-modal-img-caption"]
-      clonnedarticle.querySelector("[data-modal-content]").innerHTML = data["data-modal-content"]
+    let data = articlesData[index]
+    clonnedarticle.querySelector("[data-modal-title]").innerHTML = data["data-modal-title"]
+    clonnedarticle.querySelector("[data-modal-author-date]").innerHTML = data["data-modal-author-date"]
+    clonnedarticle.querySelector("[data-modal-img]").src = data["data-modal-img"]
+    clonnedarticle.querySelector("[data-modal-img-caption]").innerHTML = data["data-modal-img-caption"]
+    clonnedarticle.querySelector("[data-modal-content]").innerHTML = data["data-modal-content"]
   }
 }
+
+// Get data from .txt | fetch only works on github | Async so order is correct and data is loaded
+const articlesData = []
+
+async function fetchData() {
+  try {
+    let response = await fetch("/Oblig-2-group-1/filesystem.txt")
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`)
+    }
+
+    let data = await response.text()
+    let lines = data.trim().split("\n")
+    let headers = lines[0].trim().split(/\s*\|\s*/) // Splits header by "|" and trims any spaces
+
+    for (let i = 1; i < lines.length; i++) {
+      let values = lines[i].trim().split(/\s*\|\s*/) // Splits by "|" and trims any spaces
+      let articleData = {}
+
+      // If the current line does not have the expected number of values, skip it
+      if (values.length !== headers.length) {
+        continue
+      }
+      for (let j = 0; j < headers.length; j++) {
+        let cleanValue = values[j].replace(/(^"|"$)/g, "") // Remove quotes
+        articleData[headers[j]] = cleanValue
+      }
+
+      articlesData.push(articleData)
+      console.log(articleData)
+    }
+
+  }catch (error) {
+    console.log("Error:", error)
+  }
+}
+
+fetchData().then(() => {
+  // For each item in articlesData clone template and populate at that index 
+  for (let i = 1; i < articlesData.length; i++) {
+    console.log(i)
+    let clonnedarticle = cloneTemplate()
+    console.log(clonnedarticle)
+    populateTemplateAtIndex(i,clonnedarticle)
+  }
+})
+
+
+
 
