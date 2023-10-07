@@ -99,16 +99,17 @@ async function fetchData() {
   }
 }
 
-fetchData().then(() => {
-  // For each item in articlesData clone template and populate at that index 
-  for (let i = 1; i < articlesData.length; i++) {
-    console.log(i)
-    let clonnedarticle = cloneTemplate()
-    console.log(clonnedarticle)
-    populateTemplateAtIndex(i,clonnedarticle)
-  }
+document.addEventListener("DOMContentLoaded", function() {
+  fetchData().then(() => {
+    // For each item in articlesData clone template and populate at that index 
+    for (let i = 1; i < articlesData.length; i++) {
+      console.log(i)
+      let clonnedarticle = cloneTemplate()
+      console.log(clonnedarticle)
+      populateTemplateAtIndex(i,clonnedarticle)
+    }
+  })
 })
-
 
 
 
