@@ -3,11 +3,11 @@
 const openModalHandlers = [] // Store evenlisteners so one can remove them
 const closeModalHandlers = [] // Store evenlisteners so one can remove them
 
-function openModal(index) {
+function openModal(index,modals) {
   modals[index].showModal()
 }
 
-function closeModal(index) {
+function closeModal(index,modals) {
   modals[index].close()
 }
 
@@ -32,16 +32,16 @@ function addModalAbility(){
     if (openModalHandlers[index]) {
       button.removeEventListener("click", openModalHandlers[index])
     }
-    openModalHandlers[index] = () => openModal(index) 
-    button.addEventListener("click", () => openModal(index)) // For each modal open when clicked
+    openModalHandlers[index] = () => openModal(index,modals) 
+    button.addEventListener("click", () => openModal(index,modals)) // For each modal open when clicked
   })
 
   closeButtons.forEach((button, index) => {
     if (closeModalHandlers[index]) {
       button.removeEventListener("click", closeModalHandlers[index])
     }
-    closeModalHandlers[index] = () => closeModal(index)
-    button.addEventListener("click", () => closeModal(index)) // For each button in modal close when clicked
+    closeModalHandlers[index] = () => closeModal(index,modals)
+    button.addEventListener("click", () => closeModal(index,modals)) // For each button in modal close when clicked
   })
 
   modals.forEach(modal => {
@@ -59,7 +59,6 @@ function populateTemplateAtIndex(index, clonnedarticle) {
   // If Index is 2nd and every 11th index therafter then add class span2 => 2, 13 , 24, etc
   if ((index === 1) || ((index - 1) % 11 === 0 && index !== 0)) {
     let outerDiv = clonnedarticle.children[0]
-    console.log(outerDiv)
     outerDiv.classList.add("span2")  
   }
 
@@ -132,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // For each item in articlesData clone template and populate at that index 
     for (let i = 0; i < articlesData.length; i++) {
       cloneTemplate(i)
+      addModalAbility()
     }
   })
 })
