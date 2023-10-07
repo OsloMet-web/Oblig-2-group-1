@@ -70,7 +70,7 @@ fetch("/Oblig-2-group-1/filesystem.txt")
         for (let i = 1; i < articlesData.length; i++) {
           console.log(i)
           cloneTemplate()
-          let article = document.querySelectorAll(".article")[-1]
+          let article = document.querySelectorAll(".article")[i]
           console.log(article)
           populateTemplateAtIndex(i,article)
         }
