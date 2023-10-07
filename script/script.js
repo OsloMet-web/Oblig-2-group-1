@@ -44,7 +44,7 @@ function cloneTemplate() {
 
 // Get data from .txt | fetch only works on github
 const articlesData = []
-fetch("../filesystem.txt")
+fetch("/Oblig-2-group-1/filesystem.txt")
     .then(response => response.text())
     .then(data => {
         let lines = data.split("\n")
