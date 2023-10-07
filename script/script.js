@@ -60,11 +60,12 @@ fetch("/Oblig-2-group-1/filesystem.txt")
 
             articlesData.push(articleData)
 
-            // For each item in articlesData clone template and populate at that index | Fetch is asynchronous 
-            cloneTemplate()
-            populateTemplateAtIndex(i - 1)
-
-            console.log(articlesData)
+            console.log(articleData)
+        }
+        // For each item in articlesData clone template and populate at that index 
+        for (let i = 1; i < articlesData.length; i++) {
+          cloneTemplate()
+          populateTemplateAtIndex(i)
         }
     })
     .catch(error => {
@@ -90,3 +91,4 @@ function populateTemplateAtIndex(index) {
       article.querySelector("[data-modal-content]").innerHTML = data["data-modal-content"]
   }
 }
+
