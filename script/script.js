@@ -1,34 +1,56 @@
 
 // Modal
-const openButtons = document.querySelectorAll("[data-open-modal]")
-const closeButtons = document.querySelectorAll("[data-close-modal]")
-const modals = document.querySelectorAll("[data-modal]")
+const openModalHandlers = [] // Store evenlisteners so one can remove them
+const closeModalHandlers = [] // Store evenlisteners so one can remove them
 
-openButtons.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    modals[index].showModal() // For each modal open when clicked
-  })
-})
+function openModal(index) {
+  modals[index].showModal()
+}
 
-closeButtons.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    modals[index].close() // For each button in modal close when clicked
-  })
-})
+function closeModal(index) {
+  modals[index].close()
+}
 
-modals.forEach(modal => {
-  modal.addEventListener("click", e => {
-    let dialogDimensions = modal.getBoundingClientRect()
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      modal.close() // For each modal close when clicked outside of given dimensions
+function modalClickOutside(e) {
+  let dialogDimensions = this.getBoundingClientRect()
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    this.close()
+  }
+}
+
+function addModalAbility(){
+  const openButtons = document.querySelectorAll("[data-open-modal]")
+  const closeButtons = document.querySelectorAll("[data-close-modal]")
+  const modals = document.querySelectorAll("[data-modal]")
+
+  openButtons.forEach((button, index) => {
+    if (openModalHandlers[index]) {
+      button.removeEventListener("click", openModalHandlers[index])
     }
+    openModalHandlers[index] = () => openModal(index) 
+    button.addEventListener("click", () => openModal(index)) // For each modal open when clicked
   })
-})
+
+  closeButtons.forEach((button, index) => {
+    if (closeModalHandlers[index]) {
+      button.removeEventListener("click", closeModalHandlers[index])
+    }
+    closeModalHandlers[index] = () => closeModal(index)
+    button.addEventListener("click", () => closeModal(index)) // For each button in modal close when clicked
+  })
+
+  modals.forEach(modal => {
+    modal.removeEventListener("click", modalClickOutside)
+    modal.addEventListener("click", modalClickOutside) // For each modal close when clicked outside of given dimensions
+  })
+}
+
+addModalAbility() //Run function pre load of other articles
 
 
 // Populate with data at index x
