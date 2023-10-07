@@ -47,11 +47,12 @@ function cloneTemplate() {
 function populateTemplateAtIndex(index, clonnedarticle) {
   // If Index is 2nd and every 11th index therafter then add class span2 => 2, 13 , 24, etc
   if ((index === 1) || ((index - 1) % 11 === 0 && index !== 0)) {
-    let outerDiv = clonnedarticle.querySelector(".article")
+    let outerDiv = clonnedarticle.children[0]
     console.log(outerDiv)
     outerDiv.classList.add("span2")  
   }
 
+  /*
   // Add information into the data attributes
   if (clonnedarticle && articlesData[index]) {
     let data = articlesData[index]
@@ -60,7 +61,7 @@ function populateTemplateAtIndex(index, clonnedarticle) {
     clonnedarticle.querySelector("[data-modal-img]").src = data["data-modal-img"]
     clonnedarticle.querySelector("[data-modal-img-caption]").innerHTML = data["data-modal-img-caption"]
     clonnedarticle.querySelector("[data-modal-content]").innerHTML = data["data-modal-content"]
-  }
+  }*/
 }
 
 // Get data from .txt | fetch only works on github | Async so order is correct and data is loaded
