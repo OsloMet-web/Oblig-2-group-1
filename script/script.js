@@ -62,13 +62,16 @@ fetch("/Oblig-2-group-1/filesystem.txt")
                 let cleanValue = values[j].replace(/(^"|"$)/g, "") // Remove quotes
                 articleData[headers[j]] = cleanValue
             }
-            
+
             articlesData.push(articleData);
+            console.log(articleData)
         }
         // For each item in articlesData clone template and populate at that index 
         for (let i = 1; i < articlesData.length; i++) {
+          console.log(i)
           cloneTemplate()
           populateTemplateAtIndex(i)
+          console.log(articlesData[i])
         }
     })
     .catch(error => {
