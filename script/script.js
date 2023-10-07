@@ -30,21 +30,10 @@ modals.forEach(modal => {
   })
 })
 
-// Clone template function
-function cloneTemplate() {
-  // Clone html template tag
-  const template = document.getElementById("article-template")
-  const clone = document.importNode(template.content, true)
-
-  // Append to the "output" id
-  const outputElement = document.getElementById("output")
-  outputElement.appendChild(clone)
-
-  return clone
-}
 
 // Populate with data at index x
 function populateTemplateAtIndex(index, clonnedarticle) {
+  console.log(`-- RUNNING populateTemplateAtIndex(${index},${clonnedarticle}) --`)
   // If Index is 2nd and every 11th index therafter then add class span2 => 2, 13 , 24, etc
   if ((index === 1) || ((index - 1) % 11 === 0 && index !== 0)) {
     let outerDiv = clonnedarticle.children[0]
@@ -52,7 +41,6 @@ function populateTemplateAtIndex(index, clonnedarticle) {
     outerDiv.classList.add("span2")  
   }
 
-  /*
   // Add information into the data attributes
   if (clonnedarticle && articlesData[index]) {
     let data = articlesData[index]
@@ -61,8 +49,27 @@ function populateTemplateAtIndex(index, clonnedarticle) {
     clonnedarticle.querySelector("[data-modal-img]").src = data["data-modal-img"]
     clonnedarticle.querySelector("[data-modal-img-caption]").innerHTML = data["data-modal-img-caption"]
     clonnedarticle.querySelector("[data-modal-content]").innerHTML = data["data-modal-content"]
-  }*/
+  }
+  console.log(`-- FINISHED populateTemplateAtIndex --`)
 }
+
+// Clone template function
+function cloneTemplate(index) {
+  console.log(`-- RUNNING cloneTemplate(${index}) --`)
+  // Clone html template tag
+  const template = document.getElementById("article-template")
+  const clone = document.importNode(template.content, true)
+
+  // Append to the "output" id
+  const outputElement = document.getElementById("output")
+
+  populateTemplateAtIndex(index, clone)
+
+  outputElement.appendChild(clone)
+  console.log(`-- FINISHED cloneTemplate --`)
+}
+
+
 
 // Get data from .txt | fetch only works on github | Async so order is correct and data is loaded
 const articlesData = []
@@ -71,7 +78,7 @@ async function fetchData() {
   try {
     let response = await fetch("/Oblig-2-group-1/filesystem.txt")
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`)
+      throw new Error(`Can't fetch .txt: ${response.status}`)
     }
 
     let data = await response.text()
@@ -104,10 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
   fetchData().then(() => {
     // For each item in articlesData clone template and populate at that index 
     for (let i = 1; i < articlesData.length; i++) {
-      console.log(i)
-      let clonnedarticle = cloneTemplate()
-      console.log(clonnedarticle)
-      populateTemplateAtIndex(i,clonnedarticle)
+      cloneTemplate(i)
     }
   })
 })
