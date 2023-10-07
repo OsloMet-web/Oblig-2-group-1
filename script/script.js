@@ -70,8 +70,8 @@ fetch("/Oblig-2-group-1/filesystem.txt")
         for (let i = 1; i < articlesData.length; i++) {
           console.log(i)
           cloneTemplate()
-          populateTemplateAtIndex(i)
-          console.log(articlesData[i])
+          let article = document.querySelectorAll(".article")[-1]
+          populateTemplateAtIndex(i,article)
         }
     })
     .catch(error => {
@@ -79,9 +79,7 @@ fetch("/Oblig-2-group-1/filesystem.txt")
     })
 
 // Populate with data at index x
-function populateTemplateAtIndex(index) {
-  let article = document.querySelectorAll(".article")[index]
-  
+function populateTemplateAtIndex(index, article) {
   // If Index is 2nd and every 11th index therafter then add class span2 => 2, 13 , 24, etc
   if ((index === 1) || ((index - 1) % 11 === 0 && index !== 0)) {
     article.classList.add("span2")  
