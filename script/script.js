@@ -71,6 +71,7 @@ fetch("/Oblig-2-group-1/filesystem.txt")
           console.log(i)
           cloneTemplate()
           let article = document.querySelectorAll(".article")[-1]
+          console.log(article)
           populateTemplateAtIndex(i,article)
         }
     })
