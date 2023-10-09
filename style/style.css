@@ -182,3 +182,13 @@ button[data-close-modal]:hover {
     justify-content: center;
     height: 60px;
 }
+
+/*Grid system for Data1200 page*/
+
+#grid1200{
+grid-template-columns: auto;
+grid-template-rows: auto;
+list-style: inside;
+text-align: left;
+gap: 10px
+}
