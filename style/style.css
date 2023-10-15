@@ -1,14 +1,16 @@
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
-    font-family: 'Times New Roman';
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Style for the header */
 header {
+    font-size: x-large;
+    font-weight: bolder;
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -31,18 +33,19 @@ header {
 
 /* Style for the main content container */
 main {
-    max-width: 60.9vw;
+    max-width: 75.9vw;
     margin:  auto;
     padding: 20px;
     text-align: center;
+    background-color: hsl(188, 38%, 94%);
 }
 
 .article {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background-color: ghostwhite;
+    border: 1px solid slategrey;
+    border-radius: 20px;
     padding: 20px;
-    margin: 10px 0;
+    margin: 20px;
     transition: transform 0.2s;
     max-width: 100%; 
     grid-column: span 1;
@@ -60,8 +63,9 @@ div[data-open-modal]{
 
 /* Style for the journalist name and date */
 .article span {
-    color: #777;
-    font-size: 14px;
+    color: #5a5a5ad7;
+    font-style: italic;
+    font-size: 12px;
 }
 
 /* Style for the image and photographer */
@@ -72,7 +76,7 @@ div[data-open-modal]{
 
 /* Style for the image caption */
 .article figcaption {
-    color: #777;
+    color: #383636;
     font-size: 12px;
 }
 
@@ -83,12 +87,11 @@ div[data-open-modal]{
 }
 
 
-
 /* Style for the list items within the article */
 .article ul li {
     font-family: 'Times New Roman', Times, serif;
-    margin: 8px 0;
-    max-width: 100%; 
+    margin: 16px 0;
+    max-width: 90%; 
     word-wrap: break-word; /* Allow long words to break to the next line */
     white-space: normal; 
 }
@@ -104,7 +107,7 @@ footer {
 /* Grid system */
 .grid {
     display: grid;
-    grid-template-columns: 20.3vw 20.3vw 20.3vw;
+    grid-template-columns: 25.3vw 25.3vw 25.3vw;
     grid-template-rows: 41.15vh 41.15vh 41.15vh 41.15vh;
 }
 
@@ -123,34 +126,43 @@ figure img {
 
 /* Modal styling */
 dialog::backdrop{ /* Background of modal */
+    background: hsla(270, 2%, 19%, 0.5);
     background-color: hsla(270, 2%, 19%, 0.5);
+    background: darkgreen(279,20%, 50%, 0.5),bisque;
+    color: #000;
 }
 
 /* Modal custom scroll*/
 dialog::-webkit-scrollbar {
-    width: 10px;
+    width: 20px;
 }
 dialog::-webkit-scrollbar-track {
     background: #f1f1f1;
+    
 }
 
 dialog::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #8888884d;
 }
 
 dialog::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #050505b0;
 }
 /* Modal styling*/
 dialog {
+    background-color: #fcf5f5;
+    box-shadow: #000;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: normal;
     width: 50%;
-    height: 50%;
-    border: none;
+    height: 90%;
+    border: 5px;
     cursor: default;
-    text-align: left;
-    padding: 20px;
-    border-radius: 10px;
-    scrollbar-width: thin;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    scrollbar-width: auto;
     scrollbar-color: #888 #f1f1f1;
 }
 
@@ -172,10 +184,12 @@ button[data-close-modal] {
     top: 50%;
 }
 button[data-close-modal]:hover {
-    color: red;
-    transform: rotate(180deg);
+    color: rgba(255, 0, 0, 0.788);
+    transform: rotate(360deg);
+    size: 20px;
 }
 .article-header-inside {
+    font-weight: bold;
     position: relative;
     display: flex;
     align-items: center;
